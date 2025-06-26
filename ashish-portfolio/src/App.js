@@ -543,7 +543,7 @@ const Portfolio = () => {
               fintech, or enterprise sectors where I can make a meaningful impact.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {['React/TypeScript', 'Enterprise Solutions', 'Accessibility Expert', 'Security Clearance Ready'].map((tag, i) => (
+              {['React/TypeScript', 'Enterprise Solutions', 'Accessibility Expert', 'Front-End Web Developer'].map((tag, i) => (
                 <span 
                   key={i}
                   className="bg-blue-500/20 text-blue-200 px-6 py-3 rounded-full border border-blue-400/30 backdrop-blur-sm hover:bg-blue-500/30 transition-all duration-300 text-sm font-medium"
@@ -563,7 +563,7 @@ const Portfolio = () => {
       <footer className="py-12 border-t border-white/10 backdrop-blur-xl bg-white/5">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-gray-400 backdrop-blur-sm bg-white/5 rounded-full px-6 py-3 inline-block border border-white/10">
-            © 2025 Ashish Balla. Crafted with React, Tailwind CSS & lots of ☕
+            Crafted with React, Tailwind CSS  
           </p>
         </div>
       </footer>
