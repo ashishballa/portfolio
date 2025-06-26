@@ -253,9 +253,9 @@ const Portfolio = () => {
             <div className="relative">
               <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed backdrop-blur-sm bg-white/5 rounded-3xl p-6 border border-white/10">
                 Transforming digital experiences across government, insurance, and telecom sectors with 
-                <span className="text-blue-400 font-semibold px-2 py-1 bg-blue-500/20 rounded-lg mx-1 backdrop-blur-sm"> React</span>, 
-                <span className="text-blue-300 font-semibold px-2 py-1 bg-blue-400/20 rounded-lg mx-1 backdrop-blur-sm"> TypeScript</span>, and 
-                <span className="text-blue-200 font-semibold px-2 py-1 bg-blue-300/20 rounded-lg mx-1 backdrop-blur-sm"> accessibility-first design</span>
+                <span > React</span>, 
+                <span  > TypeScript</span>, and 
+                <span  > accessibility-first design</span>
               </p>
             </div>
             
@@ -314,21 +314,11 @@ const Portfolio = () => {
                 </a>
               );
             })}
-          </div>
-          
-          {/* Animated scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-            <div 
-              className="animate-bounce"
-              style={{ animationDuration: '3s' }}
-            >
-              <ChevronDown size={32} className="text-white/60" />
-            </div>
-          </div>
+          </div> 
         </div>
       </section>
 
-      {/* About Section with Enhanced Cards */}
+ 
       <section id="about" className="py-24 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
