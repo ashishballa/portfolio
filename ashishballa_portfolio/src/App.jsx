@@ -1,19 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  ChevronDown, Mail, Phone, MapPin, ExternalLink, Github, Linkedin, Code, Palette,
-  Smartphone, Users, Award, Calendar, Star, ArrowRight, Menu, X, Database, 
-  Globe, Zap, Briefcase, GraduationCap, Cloud
+  ChevronDown, Mail, Phone, MapPin, ExternalLink, Github, Linkedin, 
+  Users, Award, Calendar, ArrowRight, Menu, X, 
+  Globe, Briefcase, GraduationCap, Target, Lightbulb, TrendingUp
 } from 'lucide-react';
 
 const Portfolio = () => {
-  const [scrollY, setScrollY] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState({});
   const [navOpen, setNavOpen] = useState(false);
   const heroRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
     const handleMouseMove = (e) => setMousePosition({ x: e.clientX, y: e.clientY });
 
     if ('IntersectionObserver' in window) {
@@ -36,110 +34,104 @@ const Portfolio = () => {
       return () => observer.disconnect();
     }
 
-    window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
-  // Real Skills from Resume
+  // Updated Skills based on your resume
   const skills = [
     { 
-      category: 'Frontend', 
-      items: ['React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3'], 
-      icon: Code,
-      color: 'from-blue-500 to-cyan-500'
+      category: 'Frontend Development', 
+      items: ['React.js', 'TypeScript', 'Next.js', 'GraphQL'], 
+      icon: Globe
     },
     { 
-      category: 'Mobile', 
-      items: ['Flutter', 'Cross-platform', 'RESTful APIs', 'Firebase'], 
-      icon: Smartphone,
-      color: 'from-green-500 to-emerald-500'
+      category: 'SaaS & Enterprise', 
+      items: ['Solution Architecture', 'CI/CD Pipelines', 'AWS', 'Performance Optimization'], 
+      icon: Target
     },
     { 
-      category: 'Tools & Build', 
-      items: ['Vite', 'Webpack', 'esbuild', 'Git', 'CI/CD'], 
-      icon: Globe,
-      color: 'from-purple-500 to-pink-500'
+      category: 'UI/UX Design', 
+      items: ['Figma', 'WCAG Accessibility', 'Responsive Design', 'Component Libraries'], 
+      icon: Lightbulb
     },
     { 
-      category: 'Cloud & Data', 
-      items: ['AWS', 'MSSQL', 'Redux', 'Context API'], 
-      icon: Cloud,
-      color: 'from-orange-500 to-red-500'
+      category: 'Business Impact', 
+      items: ['Lead Generation', 'Performance Metrics', 'Client Success', 'Agile Methodology'], 
+      icon: TrendingUp
     },
   ];
 
-  // Real Experience from Resume
+  // Updated Professional Experience from Resume
   const experiences = [
     {
       title: 'Front-End Designer & Developer',
       company: 'Optima Communications International Inc.',
       location: 'Toronto, ON',
-      period: 'December 2022 - Present',
-      description: 'Designed and developed internal tools for 50+ enterprise campaigns (Scotiabank, Chubb Life). Modernized legacy platforms achieving 30% performance increase and full WCAG 2.1 compliance.',
+      period: 'Dec 2022 - Present',
+      description: 'Designed and developed internal tools for 50+ enterprise-level campaigns (Scotiabank, Chubb Life), enhancing usability and reducing navigation time by 25%. Modernized legacy platforms using React, TypeScript, and Fluent UI.',
       achievements: [
-        'Improved usability reducing navigation time by 25%',
-        'Built reusable component libraries accelerating development by 40%',
-        'Achieved 100% accessibility compliance using Axe DevTools',
-        'Implemented CI/CD pipelines and AWS deployment'
+        'Improved performance by 30% and achieved full WCAG 2.1 compliance',
+        'Accelerated development by 40% with reusable component libraries',
+        'Reduced deployment errors through CI/CD pipeline implementation',
+        'Deployed high-availability applications on AWS'
       ],
-      technologies: ['React', 'TypeScript', 'Fluent UI', 'AWS', 'MSSQL', 'Vite', 'Webpack']
+      technologies: ['React', 'TypeScript', 'Fluent UI', 'Vite', 'AWS', 'WCAG']
     },
     {
-      title: 'Front-End Developer (Flutter and Web)',
+      title: 'Front-End Developer',
       company: 'iAssist Innovation Labs',
       location: 'Bangalore, India',
-      period: 'July 2021 - August 2022',
-      description: 'Developed and deployed 3+ cross-platform mobile applications using Flutter and RESTful APIs, reducing time-to-market by 30% for client-facing insurance products.',
+      period: 'Jul 2021 - Aug 2022',
+      description: 'Developed 3+ cross-platform mobile apps using Flutter and RESTful APIs, reducing time-to-market by 30%. Designed user flows and wireframes in Figma for insurance claims processing platforms.',
       achievements: [
-        'Built cross-platform mobile apps with Flutter',
-        'Designed user-centric interfaces in Figma',
-        'Reduced time-to-market by 30%',
-        'Focused on insurance claim processing systems'
+        'Reduced time-to-market by 30% for mobile applications',
+        'Improved usability through strategic UX design in Figma',
+        'Conducted end-to-end testing, identifying bugs pre-launch',
+        'Adopted agile practices ensuring timely feature delivery'
       ],
-      technologies: ['Flutter', 'RESTful APIs', 'Figma', 'Mobile Development']
+      technologies: ['Flutter', 'REST APIs', 'Figma', 'Mobile Development']
     }
   ];
 
-  // Real Projects (based on experience)
+  // Updated Key Projects from Resume
   const projects = [
     {
-      title: 'Enterprise Campaign Tools',
-      description: 'Internal tools for 50+ enterprise campaigns including Scotiabank and Chubb Life, featuring modern React architecture and full accessibility compliance.',
-      technologies: ['React', 'TypeScript', 'Fluent UI', 'MSSQL', 'AWS'],
-      github: 'https://github.com/ashishballa',
-      live: 'https://ashishballaportfolio.netlify.app',
-      highlight: 'Used by 50+ Enterprise Campaigns'
+      title: 'Lead-Generating Insurance Website',
+      description: 'Built and deployed a Next.js web app integrated with Supabase for real-time data storage and authentication. Hosted on Vercel for lightning-fast performance and scalability.',
+      technologies: ['Next.js', 'Supabase', 'Vercel', 'Authentication'],
+      github: null,
+      live: 'https://hashlifeinsurance.com/',
+      highlight: '35% Increase in Qualified Leads'
     },
     {
-      title: 'Legacy Platform Modernization',
-      description: 'Modernized Toronto Hydro platform using React and TypeScript, achieving 30% performance improvement and WCAG 2.1 compliance.',
-      technologies: ['React', 'TypeScript', 'WCAG 2.1', 'Performance Optimization'],
-      github: 'https://github.com/ashishballa',
-      live: 'https://ashishballaportfolio.netlify.app',
-      highlight: '30% Performance Increase'
+      title: 'Customer & Partner Portal Development',
+      description: 'Enhanced Mahindra Insurance Brokers digital insurance platforms, creating a Customer Self-Service Portal and Dealer/Partner Dashboard to simplify policy purchases, renewals, and claims tracking.',
+      technologies: ['React', 'Dashboard Design', 'Self-Service Portal', 'Insurance Tech'],
+      github: null,
+      live: null,
+      highlight: 'Digital Insurance Platform'
     },
     {
-      title: 'Cross-Platform Insurance Apps',
-      description: 'Flutter-based mobile applications for insurance claim processing with RESTful API integration and user-centric design.',
-      technologies: ['Flutter', 'RESTful APIs', 'Figma', 'Firebase', 'Mobile UI/UX'],
-      github: 'https://github.com/ashishballa',
-      live: 'https://ashishballaportfolio.netlify.app',
-      highlight: '30% Faster Time-to-Market'
+      title: 'Legacy Web Portal Modernization',
+      description: 'Migrated a legacy JavaScript/jQuery system to a modern React + TypeScript architecture, improving performance, scalability, and accessibility.',
+      technologies: ['React', 'TypeScript', 'Legacy Migration', 'Performance Optimization'],
+      github: null,
+      live: null,
+      highlight: 'Legacy System Modernization'
     }
   ];
 
-  // Education from Resume
+  // Education & Certifications from Resume
   const education = [
     {
       degree: 'Master of Professional Studies (MPS), Analytics',
       school: 'Northeastern University',
-      location: 'Boston, USA (Toronto Campus)',
-      period: 'September 2022 - April 2024',
+      location: 'Toronto Campus',
+      period: 'September 2022 - March 2024',
       icon: GraduationCap
     },
     {
@@ -151,6 +143,23 @@ const Portfolio = () => {
     }
   ];
 
+  // Certifications
+  const certifications = [
+    {
+      title: 'HubSpot Inbound Sales Certification',
+      issuer: 'HubSpot Academy',
+      year: '2025',
+      icon: Award,
+      link: 'https://app-na3.hubspot.com/academy/achievements/sy44ktpb/en/1/ashish-balla/inbound-sales'
+    },
+    {
+      title: 'HubSpot Sales Hub Software Certification',
+      issuer: 'HubSpot Academy',
+      year: '2025',
+      icon: Award
+    }
+  ];
+
   const smoothScroll = (target) => {
     const element = document.getElementById(target);
     if (element) {
@@ -159,25 +168,23 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden relative">
-      {/* Animated background */}
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-slate-900 text-gray-100 overflow-hidden relative">
+      {/* Minimalistic background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div 
-          className="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
+          className="absolute w-72 h-72 bg-indigo-500/5 rounded-full blur-3xl transition-all duration-700 ease-out"
           style={{
-            left: mousePosition.x - 192,
-            top: mousePosition.y - 192,
-            transition: 'all 0.3s ease-out'
+            left: mousePosition.x - 144,
+            top: mousePosition.y - 144
           }}
         />
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/5 rounded-full blur-2xl animate-ping" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/5 rounded-full blur-2xl animate-pulse" />
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-slate-400/3 rounded-full blur-3xl" />
       </div>
 
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-xl bg-black/20 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
+      {/* Minimalistic Navigation */}
+      <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-slate-950/70 border-b border-slate-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
+          <div className="text-xl font-light tracking-wide text-gray-100">
             Ashish Balla
           </div>
 
@@ -187,26 +194,27 @@ const Portfolio = () => {
               <button
                 key={item}
                 onClick={() => smoothScroll(item.toLowerCase())}
-                className="text-white hover:text-blue-300 transition-colors duration-300 font-medium"
+                className="text-gray-400 hover:text-gray-100 transition-all duration-300 font-light text-sm uppercase tracking-wider relative group"
               >
                 {item}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-300 group-hover:w-full transition-all duration-300"></span>
               </button>
             ))}
           </div>
 
           {/* Mobile Navigation Toggle */}
           <button 
-            className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+            className="md:hidden text-gray-400 p-2 hover:text-gray-100 transition-colors"
             onClick={() => setNavOpen(!navOpen)}
           >
-            {navOpen ? <X size={24} /> : <Menu size={24} />}
+            {navOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {/* Mobile Navigation Menu */}
         {navOpen && (
-          <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10">
-            <div className="px-6 py-4 space-y-4">
+          <div className="md:hidden bg-slate-950/95 backdrop-blur-xl border-t border-slate-800/50">
+            <div className="px-6 py-6 space-y-6">
               {['About', 'Experience', 'Projects', 'Education', 'Contact'].map((item) => (
                 <button
                   key={item}
@@ -214,7 +222,7 @@ const Portfolio = () => {
                     smoothScroll(item.toLowerCase());
                     setNavOpen(false);
                   }}
-                  className="block w-full text-left text-white hover:text-blue-300 transition-colors py-2 text-lg"
+                  className="block w-full text-left text-gray-400 hover:text-gray-100 transition-colors font-light text-sm uppercase tracking-wider"
                 >
                   {item}
                 </button>
@@ -224,75 +232,88 @@ const Portfolio = () => {
         )}
       </nav>
 
-      {/* Hero Section */}
+      {/* Minimalistic Hero Section */}
       <section 
         ref={heroRef}
         className="min-h-screen flex flex-col justify-center items-center px-4 text-center relative"
       >
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 bg-gradient-to-r from-white via-blue-300 to-cyan-300 bg-clip-text text-transparent animate-pulse">
-            Front-End Developer
-          </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl max-w-3xl text-gray-300 mb-6 leading-relaxed">
-            React | TypeScript | Flutter
-          </p>
-          <p className="text-base sm:text-lg max-w-4xl text-gray-400 mb-10 leading-relaxed">
-            Results-driven developer with 3+ years of experience building responsive, accessible web and mobile applications. 
-            Delivered UI/UX for 50+ enterprise campaigns across banking and insurance domains with full WCAG 2.1 compliance.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <div className="space-y-4">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-extralight mb-6 text-gray-100 tracking-tight leading-tight">
+              Frontend
+              <span className="block font-light text-gray-300">Developer</span>
+            </h1>
+            <p className="text-lg sm:text-xl max-w-2xl text-gray-400 mx-auto leading-relaxed font-light">
+              Toronto, Canada
+            </p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto space-y-6">
+            <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-light">
+              Dynamic Front-End Developer with 3+ years of experience building responsive, accessible, and performance-optimized web applications. 
+              Proficient in React, TypeScript, Next.js, and modern development practices.
+            </p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
             <button 
               onClick={() => smoothScroll('projects')}
-              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-full hover:scale-105 transition-transform duration-300 flex items-center gap-2"
+              className="group px-8 py-3 bg-gray-100 text-gray-900 font-light rounded-sm hover:bg-gray-200 transition-all duration-300 flex items-center gap-2 text-sm uppercase tracking-wider"
             >
-              View My Work <ArrowRight size={20} />
+              View Work
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
             </button>
             <button 
               onClick={() => smoothScroll('contact')}
-              className="px-8 py-4 border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-colors duration-300"
+              className="px-8 py-3 border border-gray-600 text-gray-300 font-light rounded-sm hover:border-gray-400 hover:text-gray-100 transition-all duration-300 text-sm uppercase tracking-wider"
             >
               Get In Touch
             </button>
           </div>
         </div>
         
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="text-white/60" size={32} />
+        {/* Subtle Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <ChevronDown className="text-gray-500 animate-pulse" size={24} />
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-6xl font-bold text-white mb-6">About Me</h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Skilled in creating reusable component libraries, integrating RESTful APIs, managing state with Redux and Context API, 
-              and utilizing modern build tools such as Vite, Webpack, and esbuild. Proficient in Agile methodologies, CI/CD pipelines, 
-              and cloud deployment using Amazon Web Services (AWS).
-            </p>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl font-extralight text-gray-100 mb-8 tracking-wide">About</h2>
+            <div className="max-w-4xl mx-auto space-y-6">
+              <p className="text-lg text-gray-300 leading-relaxed font-light">
+                Passionate about leveraging AI-assisted tools (GitHub Copilot, OpenAI API, Claude Code) to accelerate development 
+                and deliver impactful user experiences.
+              </p>
+              <p className="text-base text-gray-400 leading-relaxed font-light">
+                Recently developed and deployed a lead-generating insurance platform on Next.js, Supabase, and Vercel, 
+                driving a 35% increase in qualified leads.
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {skills.map((skill, index) => {
               const Icon = skill.icon;
               return (
                 <div
                   key={index}
-                  className={`bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
+                  className={`group bg-slate-900/50 border border-slate-800/50 rounded-sm p-8 hover:border-slate-700 transition-all duration-500 hover:-translate-y-2 ${
                     isVisible.about ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
+                  style={{ transitionDelay: `${index * 150}ms` }}
                 >
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${skill.color} flex items-center justify-center mb-4`}>
-                    <Icon className="text-white" size={24} />
+                  <div className="w-10 h-10 rounded-sm bg-gray-100 flex items-center justify-center mb-6 group-hover:bg-white transition-colors duration-300">
+                    <Icon className="text-gray-900" size={20} />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-white">{skill.category}</h3>
-                  <ul className="text-gray-300 space-y-2">
+                  <h3 className="text-lg font-light mb-4 text-gray-100 tracking-wide">{skill.category}</h3>
+                  <ul className="text-gray-400 space-y-3 text-sm font-light">
                     {skill.items.map((item, i) => (
-                      <li key={i} className="flex items-center gap-2">
-                        <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${skill.color}`} />
+                      <li key={i} className="flex items-start gap-3">
+                        <div className="w-1 h-1 rounded-full bg-gray-500 mt-2 flex-shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -305,59 +326,62 @@ const Portfolio = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5">
+      <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-6xl font-bold text-white mb-6">Experience</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              My professional journey in frontend development
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl font-extralight text-gray-100 mb-8 tracking-wide">Experience</h2>
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto font-light">
+              Professional journey in frontend development and enterprise solutions
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-16">
             {experiences.map((exp, index) => (
               <div 
                 key={index}
-                className={`bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-white/30 transition-all duration-300 ${
+                className={`group border-l-2 border-slate-800 pl-8 hover:border-gray-400 transition-all duration-500 ${
                   isVisible.experience ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
-                    <p className="text-blue-300 text-lg font-semibold mb-1">{exp.company}</p>
-                    <p className="text-gray-400 text-sm mb-3">{exp.location}</p>
+                <div className="relative">
+                  <div className="absolute -left-10 w-4 h-4 bg-slate-800 group-hover:bg-gray-400 rounded-full transition-colors duration-500"></div>
+                  
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-light text-gray-100 mb-2 tracking-wide">{exp.title}</h3>
+                      <p className="text-gray-300 text-lg font-light mb-1">{exp.company}</p>
+                      <p className="text-gray-500 text-sm mb-4">{exp.location}</p>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-400 mt-2 lg:mt-0">
+                      <Calendar size={14} />
+                      <span className="text-sm font-light">{exp.period}</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-300 mt-2 lg:mt-0">
-                    <Calendar size={16} />
-                    <span className="text-sm">{exp.period}</span>
+                  
+                  <p className="text-gray-300 mb-6 leading-relaxed font-light max-w-4xl">{exp.description}</p>
+                  
+                  <div className="mb-6">
+                    <ul className="text-gray-400 space-y-3 text-sm font-light">
+                      {exp.achievements.map((achievement, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <div className="w-1 h-1 rounded-full bg-gray-500 mt-2 flex-shrink-0" />
+                          <span>{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
-                
-                <p className="text-gray-300 mb-4 leading-relaxed">{exp.description}</p>
-                
-                <div className="mb-4">
-                  <h4 className="text-white font-semibold mb-2">Key Achievements:</h4>
-                  <ul className="text-gray-300 space-y-1">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Star className="text-blue-300 mt-1 flex-shrink-0" size={14} />
-                        <span className="text-sm">{achievement}</span>
-                      </li>
+                  
+                  <div className="flex flex-wrap gap-3">
+                    {exp.technologies.map((tech, i) => (
+                      <span 
+                        key={i}
+                        className="px-3 py-1 bg-slate-800/70 text-gray-400 rounded-sm text-xs uppercase tracking-wider font-light border border-slate-700"
+                      >
+                        {tech}
+                      </span>
                     ))}
-                  </ul>
-                </div>
-                
-                <div className="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech, i) => (
-                    <span 
-                      key={i}
-                      className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  </div>
                 </div>
               </div>
             ))}
@@ -366,62 +390,65 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-6xl font-bold text-white mb-6">Projects</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              A showcase of my professional work and achievements
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl font-extralight text-gray-100 mb-8 tracking-wide">Projects</h2>
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto font-light">
+              Key projects demonstrating technical expertise and business impact
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {projects.map((project, index) => (
               <div 
                 key={index}
-                className={`bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-white/30 transition-all duration-300 hover:scale-105 ${
+                className={`group border border-slate-800/50 rounded-sm overflow-hidden hover:border-slate-700 transition-all duration-500 hover:-translate-y-2 ${
                   isVisible.projects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
+                style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <div className="h-48 bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex flex-col items-center justify-center p-6">
-                  <Code className="text-white/60 mb-4" size={48} />
-                  <span className="text-xs text-blue-300 font-semibold bg-blue-500/20 px-3 py-1 rounded-full">
+                <div className="h-48 bg-gradient-to-br from-slate-900 to-slate-800 flex items-end p-8">
+                  <span className="text-xs text-gray-300 bg-slate-800/70 px-3 py-2 rounded-sm uppercase tracking-wider font-light border border-slate-700">
                     {project.highlight}
                   </span>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                  <p className="text-gray-300 mb-4 leading-relaxed text-sm">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                <div className="p-8">
+                  <h3 className="text-xl font-light text-gray-100 mb-4 tracking-wide">{project.title}</h3>
+                  <p className="text-gray-400 mb-6 leading-relaxed text-sm font-light">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech, i) => (
                       <span 
                         key={i}
-                        className="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs"
+                        className="px-3 py-1 bg-slate-800/70 text-gray-400 rounded-sm text-xs uppercase tracking-wider font-light border border-slate-700"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                  <div className="flex gap-3">
-                    <a 
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
-                    >
-                      <Github size={16} />
-                      <span className="text-sm">Code</span>
-                    </a>
-                    <a 
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
-                    >
-                      <ExternalLink size={16} />
-                      <span className="text-sm">Portfolio</span>
-                    </a>
+                  <div className="flex gap-6">
+                    {project.github && (
+                      <a 
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/link flex items-center gap-2 text-gray-400 hover:text-gray-100 transition-colors text-sm font-light uppercase tracking-wider"
+                      >
+                        <Github size={14} />
+                        <span className="group-hover/link:translate-x-1 transition-transform duration-300">GitHub</span>
+                      </a>
+                    )}
+                    {project.live && (
+                      <a 
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/link flex items-center gap-2 text-gray-400 hover:text-gray-100 transition-colors text-sm font-light uppercase tracking-wider"
+                      >
+                        <ExternalLink size={14} />
+                        <span className="group-hover/link:translate-x-1 transition-transform duration-300">View Live</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -431,110 +458,159 @@ const Portfolio = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5">
+      <section id="education" className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-6xl font-bold text-white mb-6">Education</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              My academic background and qualifications
-            </p>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl font-extralight text-gray-100 mb-8 tracking-wide">Education</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-12">
             {education.map((edu, index) => {
               const Icon = edu.icon;
               return (
                 <div 
                   key={index}
-                  className={`bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-white/30 transition-all duration-300 ${
+                  className={`group flex items-start gap-6 p-8 border-l-2 border-slate-800 hover:border-gray-400 transition-all duration-500 ${
                     isVisible.education ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
-                      <Icon className="text-white" size={24} />
+                  <div className="relative">
+                    <div className="absolute -left-11 w-4 h-4 bg-slate-800 group-hover:bg-gray-400 rounded-full transition-colors duration-500"></div>
+                    <div className="w-12 h-12 rounded-sm bg-gray-100 group-hover:bg-white flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                      <Icon className="text-gray-900" size={20} />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2">{edu.degree}</h3>
-                      <p className="text-blue-300 font-semibold mb-1">{edu.school}</p>
-                      <p className="text-gray-400 text-sm mb-2">{edu.location}</p>
-                      <div className="flex items-center gap-2 text-gray-300">
-                        <Calendar size={14} />
-                        <span className="text-sm">{edu.period}</span>
-                      </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-light text-gray-100 mb-2 tracking-wide">{edu.degree}</h3>
+                    <p className="text-gray-300 font-light mb-1">{edu.school}</p>
+                    <p className="text-gray-500 text-sm mb-3">{edu.location}</p>
+                    <div className="flex items-center gap-2 text-gray-400">
+                      <Calendar size={14} />
+                      <span className="text-sm font-light">{edu.period}</span>
                     </div>
                   </div>
                 </div>
               );
             })}
+            
+            {/* Certifications inline */}
+            <div className="pt-12">
+              <h3 className="text-2xl font-light text-gray-100 mb-8 tracking-wide">Certifications</h3>
+              <div className="space-y-8">
+                {certifications.map((cert, index) => {
+                  const Icon = cert.icon;
+                  return (
+                    <div 
+                      key={index}
+                      className="group flex items-start gap-6 p-6 border border-slate-800/50 rounded-sm hover:border-slate-700 transition-all duration-300"
+                    >
+                      <div className="w-10 h-10 rounded-sm bg-gray-100 group-hover:bg-white flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                        <Icon className="text-gray-900" size={16} />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-light text-gray-100 mb-1 tracking-wide">
+                          {cert.link ? (
+                            <a 
+                              href={cert.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="hover:text-gray-300 transition-colors flex items-center gap-2 group/link"
+                            >
+                              {cert.title}
+                              <ExternalLink size={14} className="text-gray-400 group-hover/link:translate-x-1 transition-transform duration-300" />
+                            </a>
+                          ) : (
+                            cert.title
+                          )}
+                        </h4>
+                        <p className="text-gray-300 font-light text-sm mb-1">{cert.issuer}</p>
+                        <div className="flex items-center gap-2 text-gray-500">
+                          <Calendar size={12} />
+                          <span className="text-xs font-light">{cert.year}</span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-6xl font-bold text-white mb-6">Get In Touch</h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities and interesting projects. 
-            Let's build something amazing together!
-          </p>
+      <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl font-extralight text-gray-100 mb-8 tracking-wide">Contact</h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+              Let's discuss new opportunities, technical challenges, and innovative solutions.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/30 transition-all duration-300">
-              <Mail className="text-blue-300 mx-auto mb-4" size={32} />
-              <h3 className="text-white font-semibold mb-2">Email</h3>
-              <a href="mailto:canashishballa@gmail.com" className="text-gray-300 hover:text-blue-300 transition-colors">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="text-center group">
+              <div className="w-16 h-16 rounded-sm bg-slate-900 group-hover:bg-slate-800 flex items-center justify-center mx-auto mb-4 transition-colors duration-300">
+                <Mail className="text-gray-400 group-hover:text-gray-300" size={24} />
+              </div>
+              <p className="text-xs uppercase tracking-wider text-gray-500 mb-2 font-light">Email</p>
+              <a 
+                href="mailto:canashishballa@gmail.com"
+                className="text-gray-300 hover:text-gray-100 transition-colors text-sm font-light"
+              >
                 canashishballa@gmail.com
               </a>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/30 transition-all duration-300">
-              <Phone className="text-green-300 mx-auto mb-4" size={32} />
-              <h3 className="text-white font-semibold mb-2">Phone</h3>
-              <a href="tel:+19055989176" className="text-gray-300 hover:text-green-300 transition-colors">
+            <div className="text-center group">
+              <div className="w-16 h-16 rounded-sm bg-slate-900 group-hover:bg-slate-800 flex items-center justify-center mx-auto mb-4 transition-colors duration-300">
+                <Phone className="text-gray-400 group-hover:text-gray-300" size={24} />
+              </div>
+              <p className="text-xs uppercase tracking-wider text-gray-500 mb-2 font-light">Phone</p>
+              <a href="tel:+19055989176" className="text-gray-300 hover:text-gray-100 transition-colors text-sm font-light">
                 +1 (905) 598-9176
               </a>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/30 transition-all duration-300">
-              <MapPin className="text-red-300 mx-auto mb-4" size={32} />
-              <h3 className="text-white font-semibold mb-2">Location</h3>
-              <p className="text-gray-300">Toronto, ON</p>
+            <div className="text-center group">
+              <div className="w-16 h-16 rounded-sm bg-slate-900 group-hover:bg-slate-800 flex items-center justify-center mx-auto mb-4 transition-colors duration-300">
+                <MapPin className="text-gray-400 group-hover:text-gray-300" size={24} />
+              </div>
+              <p className="text-xs uppercase tracking-wider text-gray-500 mb-2 font-light">Location</p>
+              <p className="text-gray-300 text-sm font-light">Toronto, Canada</p>
             </div>
           </div>
 
-          <div className="flex justify-center gap-6">
+          <div className="flex justify-center gap-8">
             <a 
               href="https://github.com/ashishballa" 
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+              className="group p-4 border border-slate-800 rounded-sm hover:border-slate-700 transition-all duration-300 hover:-translate-y-1"
             >
-              <Github className="text-white" size={24} />
+              <Github className="text-gray-400 group-hover:text-gray-100" size={20} />
             </a>
             <a 
               href="https://linkedin.com/in/ashishballa" 
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+              className="group p-4 border border-slate-800 rounded-sm hover:border-slate-700 transition-all duration-300 hover:-translate-y-1"
             >
-              <Linkedin className="text-white" size={24} />
+              <Linkedin className="text-gray-400 group-hover:text-gray-100" size={20} />
             </a>
             <a 
-              href="mailto:canashishballa@gmail.com" 
-              className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+              href="mailto:canashishballa@gmail.com"
+              className="group p-4 border border-slate-800 rounded-sm hover:border-slate-700 transition-all duration-300 hover:-translate-y-1"
             >
-              <Mail className="text-white" size={24} />
+              <Mail className="text-gray-400 group-hover:text-gray-100" size={20} />
             </a>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 text-center text-gray-400 border-t border-white/10">
+      {/* Minimalistic Footer */}
+      <footer className="py-12 text-center text-gray-500 border-t border-slate-800/50">
         <div className="max-w-4xl mx-auto px-4">
-          <p className="mb-4">Crafted with React & Tailwind CSS</p>
-          <p>&copy; 2025 Ashish Balla. All rights reserved.</p>
+          <p className="text-xs uppercase tracking-wider font-light">&copy; 2025 Ashish Balla</p>
         </div>
       </footer>
     </div>
