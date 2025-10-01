@@ -41,90 +41,61 @@ const Portfolio = () => {
     };
   }, []);
 
- // Update skills array
-const skills = [
-  { 
-    category: 'Backend Development', 
-    items: ['Java', 'Spring Boot', 'Microservices', 'Node.js'], 
-    icon: Globe
-  },
-  { 
-    category: 'Frontend Development', 
-    items: ['React.js', 'Redux', 'TypeScript', 'AngularJS'], 
-    icon: Target 
-  },
-  { 
-    category: 'Cloud & DevOps', 
-    items: ['AWS', 'Azure', 'Docker', 'Kubernetes'], 
-    icon: Lightbulb
-  },
-  { 
-    category: 'Databases & Tools', 
-    items: ['Oracle', 'MongoDB', 'PostgreSQL', 'Jenkins'], 
-    icon: TrendingUp
-  },
-];
+  // Updated Skills based on your resume
+  const skills = [
+    { 
+      category: 'Frontend Development', 
+      items: ['React.js', 'TypeScript', 'Next.js', 'GraphQL'], 
+      icon: Globe
+    },
+    { 
+      category: 'SaaS & Enterprise', 
+      items: ['Solution Architecture', 'CI/CD Pipelines', 'AWS', 'Performance Optimization'], 
+      icon: Target
+    },
+    { 
+      category: 'UI/UX Design', 
+      items: ['Figma', 'WCAG Accessibility', 'Responsive Design', 'Component Libraries'], 
+      icon: Lightbulb
+    },
+    { 
+      category: 'Business Impact', 
+      items: ['Lead Generation', 'Performance Metrics', 'Client Success', 'Agile Methodology'], 
+      icon: TrendingUp
+    },
+  ];
 
-// Update experiences array
-const experiences = [
-  {
-    title: 'Java Full Stack Developer',
-    company: 'Optima Communications (Scotiabank)',
-    location: 'Toronto, ON',
-    period: 'Jul 2024 - Present',
-    description: 'Developing and deploying Spring Boot microservices on AWS infrastructure with focus on scalability and fault tolerance.',
-    achievements: [
-      'Built responsive web applications using React.js and REST APIs',
-      'Engineered real-time data pipelines using Kafka and RabbitMQ',
-      'Implemented MLOps pipelines with Docker and Kubernetes',
-      'Managed high-performance databases including Oracle and MongoDB'
-    ],
-    technologies: ['AWS', 'Spring Boot', 'React', 'Kafka', 'Docker', 'MongoDB']
-  },
-  {
-    title: 'Java Full Stack Developer',
-    company: 'Optima Communications (Chubb Limited)',
-    location: 'Toronto, ON',
-    period: 'Dec 2022 - Jun 2024',
-    description: 'Designed and implemented Spring Boot microservices and REST APIs deployed on PCF and Kubernetes for distributed enterprise systems.',
-    achievements: [
-      'Built automated CI/CD pipelines and MLOps workflows',
-      'Developed real-time analytics dashboards',
-      'Managed Azure cloud infrastructure',
-      'Implemented logging with RabbitMQ and Log4j'
-    ],
-    technologies: ['Azure', 'Spring Boot', 'Kubernetes', 'Jenkins', 'MongoDB', 'REST APIs']
-  },
-  {
-    title: 'Java Full Stack Developer',
-    company: 'iAssist Innovation Labs',
-    location: 'Bangalore, India',
-    period: 'Jul 2021 - Aug 2022',
-    description: 'Developed Spring Boot microservices with IoC, AOP, and REST APIs while implementing front-end components using React.js and Redux.',
-    achievements: [
-      'Built MLOps pipelines using AWS and Docker',
-      'Managed cloud deployments on AWS and WebLogic',
-      'Optimized database performance across multiple platforms',
-      'Implemented microservices architecture'
-    ],
-    technologies: ['AWS', 'Spring Boot', 'React', 'Redux', 'Docker', 'MongoDB']
-  },
-  {
-    title: 'Java Developer',
-    company: 'Bosch',
-    location: 'Bangalore, India',
-    period: 'Mar 2020 - Jun 2021',
-    description: 'Developed scalable microservices using Java 8, Spring Boot, and Hibernate while migrating monolithic applications to microservices architecture.',
-    achievements: [
-      'Automated CI/CD pipelines with GitHub Actions',
-      'Implemented testing with JUnit',
-      'Built front-end apps with AngularJS and JSF',
-      'Integrated REST APIs for dynamic web experiences'
-    ],
-    technologies: ['Java 8', 'Spring Boot', 'AngularJS', 'JSF', 'REST APIs', 'Kubernetes']
-  }
-];
-
+  // Updated Professional Experience from Resume
+  const experiences = [
+    {
+      title: 'Front-End Designer & Developer',
+      company: 'Optima Communications International Inc.',
+      location: 'Toronto, ON',
+      period: 'Dec 2022 - Present',
+      description: 'Designed and developed internal tools for 50+ enterprise-level campaigns (Scotiabank, Chubb Life), enhancing usability and reducing navigation time by 25%. Modernized legacy platforms using React, TypeScript, and Fluent UI.',
+      achievements: [
+        'Improved performance by 30% and achieved full WCAG 2.1 compliance',
+        'Accelerated development by 40% with reusable component libraries',
+        'Reduced deployment errors through CI/CD pipeline implementation',
+        'Deployed high-availability applications on AWS'
+      ],
+      technologies: ['React', 'TypeScript', 'Fluent UI', 'Vite', 'AWS', 'WCAG']
+    },
+    {
+      title: 'Front-End Developer',
+      company: 'iAssist Innovation Labs',
+      location: 'Bangalore, India',
+      period: 'Jul 2021 - Aug 2022',
+      description: 'Developed 3+ cross-platform mobile apps using Flutter and RESTful APIs, reducing time-to-market by 30%. Designed user flows and wireframes in Figma for insurance claims processing platforms.',
+      achievements: [
+        'Reduced time-to-market by 30% for mobile applications',
+        'Improved usability through strategic UX design in Figma',
+        'Conducted end-to-end testing, identifying bugs pre-launch',
+        'Adopted agile practices ensuring timely feature delivery'
+      ],
+      technologies: ['Flutter', 'REST APIs', 'Figma', 'Mobile Development']
+    }
+  ];
 
   // Updated Key Projects from Resume
   const projects = [
@@ -279,10 +250,9 @@ const experiences = [
           
           <div className="max-w-3xl mx-auto space-y-6">
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-light">
-  Full Stack Developer with 5+ years of experience in designing, developing, and deploying 
-  scalable web applications and microservices using Java, Spring Boot, React, and AWS. 
-  Proven expertise in cloud-native architectures and DevOps/MLOps practices.
-</p>
+              Dynamic Front-End Developer with 3+ years of experience building responsive, accessible, and performance-optimized web applications. 
+              Proficient in React, TypeScript, Next.js, and modern development practices.
+            </p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
