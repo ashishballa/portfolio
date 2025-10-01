@@ -214,7 +214,7 @@ const experiences = [
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-slate-950/70 border-b border-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
           <div className="text-xl font-light tracking-wide text-gray-100">
-            Ashish Balla
+            Venkat Ashish Balla
           </div>
 
           {/* Desktop Navigation */}
@@ -586,10 +586,10 @@ const experiences = [
               </div>
               <p className="text-xs uppercase tracking-wider text-gray-500 mb-2 font-light">Email</p>
               <a 
-                href="mailto:canashishballa@gmail.com"
+                href="mailto:venkatashishb@gmail.com"
                 className="text-gray-300 hover:text-gray-100 transition-colors text-sm font-light"
               >
-                canashishballa@gmail.com
+                venkatashishb@gmail.com
               </a>
             </div>
             <div className="text-center group">
@@ -620,7 +620,7 @@ const experiences = [
               <Github className="text-gray-400 group-hover:text-gray-100" size={20} />
             </a>
             <a 
-              href="https://linkedin.com/in/ashishballa" 
+              href="https://www.linkedin.com/in/venkatashishb/" 
               target="_blank"
               rel="noopener noreferrer"
               className="group p-4 border border-slate-800 rounded-sm hover:border-slate-700 transition-all duration-300 hover:-translate-y-1"
@@ -628,7 +628,7 @@ const experiences = [
               <Linkedin className="text-gray-400 group-hover:text-gray-100" size={20} />
             </a>
             <a 
-              href="mailto:canashishballa@gmail.com"
+              href="mailto:venkatashishb@gmail.com"
               className="group p-4 border border-slate-800 rounded-sm hover:border-slate-700 transition-all duration-300 hover:-translate-y-1"
             >
               <Mail className="text-gray-400 group-hover:text-gray-100" size={20} />
@@ -640,7 +640,7 @@ const experiences = [
       {/* Minimalistic Footer */}
       <footer className="py-12 text-center text-gray-500 border-t border-slate-800/50">
         <div className="max-w-4xl mx-auto px-4">
-          <p className="text-xs uppercase tracking-wider font-light">&copy; 2025 Ashish Balla</p>
+          <p className="text-xs uppercase tracking-wider font-light">&copy; 2025 Venkat Ashish Balla</p>
         </div>
       </footer>
     </div>
