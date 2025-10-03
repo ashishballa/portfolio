@@ -269,7 +269,7 @@ const experiences = [
         <div className="max-w-5xl mx-auto space-y-8">
           <div className="space-y-4">
             <h1 className="text-5xl sm:text-7xl md:text-8xl font-extralight mb-6 text-gray-100 tracking-tight leading-tight">
-              Frontend
+              Full Stack
               <span className="block font-light text-gray-300">Developer</span>
             </h1>
             <p className="text-lg sm:text-xl max-w-2xl text-gray-400 mx-auto leading-relaxed font-light">
