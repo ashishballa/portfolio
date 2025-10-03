@@ -361,7 +361,7 @@ const experiences = [
           <div className="text-center mb-20">
             <h2 className="text-4xl sm:text-5xl font-extralight text-gray-100 mb-8 tracking-wide">Experience</h2>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto font-light">
-              Professional journey in frontend development and enterprise solutions
+              Professional journey in Full Stack development and enterprise solutions
             </p>
           </div>
 
