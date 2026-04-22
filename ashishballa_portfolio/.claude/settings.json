@@ -1,0 +1,6 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "bash \"D:/Projects/Portfolio/ashishballa_portfolio/.claude/statusline-command.sh\""
+  }
+}
